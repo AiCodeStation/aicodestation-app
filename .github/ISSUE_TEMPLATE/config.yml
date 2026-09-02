@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://aicodestation.com/contact/
+    about: Please report vulnerabilities privately. Do not open a public issue.
+  - name: Documentation
+    url: https://aicodestation.com/docs/
+    about: Setup, configuration, and day-to-day use.
+  - name: Billing, licensing, or account help
+    url: https://aicodestation.com/contact/
+    about: Anything about your plan, licence, or payment.
+  - name: Enterprise enquiries
+    url: https://aicodestation.com/enterprise/
+    about: Dual control, SIEM export, corporate gates, and support.

@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest something AiCodeStation should do
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do
+      description: Describe the problem, not only the solution you have in mind.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like AiCodeStation to do
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: How you work around it today
+      description: Optional.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which part of the app
+      options:
+        - Tools and running
+        - Workflows
+        - Cyber security engine
+        - Secure code review
+        - Integrations and plugins
+        - AI providers
+        - Settings, secrets, or enterprise controls
+        - Voice
+        - Something else
+    validations:
+      required: true

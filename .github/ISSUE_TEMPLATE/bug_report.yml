@@ -1,0 +1,76 @@
+name: Bug report
+description: Something in AiCodeStation is not working as it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this.
+
+        Please do not report security vulnerabilities here. Use the process in
+        [SECURITY.md](../blob/main/SECURITY.md) instead.
+
+        Redact anything sensitive before you paste logs: paths, tokens, repository names,
+        and customer data.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Help, About shows the exact build.
+      placeholder: "1.0.30"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows 11
+        - Windows 10
+        - Linux (.deb)
+        - Linux (.rpm)
+        - Linux (AppImage)
+        - Linux (tar.gz)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Optional. Redact anything sensitive first.
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I am on the current release, or I confirmed the issue still happens on it
+          required: true
+        - label: I searched existing issues
+          required: true
+        - label: This is not a security vulnerability
+          required: true
