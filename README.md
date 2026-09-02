@@ -12,6 +12,7 @@
 
 <br>
 
+<a href="https://aicodestation.github.io/aicodestation-app/"><b>Product page</b></a> &nbsp;•&nbsp;
 <a href="https://aicodestation.com/downloads/"><b>Download</b></a> &nbsp;•&nbsp;
 <a href="https://aicodestation.com/features/"><b>Features</b></a> &nbsp;•&nbsp;
 <a href="https://aicodestation.com/docs/"><b>Docs</b></a> &nbsp;•&nbsp;
@@ -140,7 +141,78 @@ GCP Secret Manager.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/assets/cyber-pentest.webp" alt="The penetration test authorization gate">
+<br><br>
+
+**Nothing probes without permission**
+
+Active tests demand an explicit ownership confirmation. Link-local and cloud-metadata targets
+are blocked outright, and severity scope is yours to set.
+
+</td>
+<td width="50%" valign="top">
+<img src="docs/assets/cyber-c2.webp" alt="Adversary lab engagement plan">
+<br><br>
+
+**Adversary lab, without the payload**
+
+Produces an auditable engagement plan for your own isolated, egress-denied VM under a
+server-brokered approval. The frameworks are never bundled in the client.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/assets/settings-ai-provider.webp" alt="AI provider settings">
+<br><br>
+
+**Bring your own model**
+
+Any OpenAI-compatible provider, cloud or local. Keys live in the OS secret vault, never in
+plain settings.
+
+</td>
+<td width="50%" valign="top">
+<img src="docs/assets/settings-integrations.webp" alt="Git integrations">
+<br><br>
+
+**Your own remotes**
+
+GitHub, GitLab, and Codeberg connections, with CI/CD run history and private repository
+access once connected.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<img src="docs/assets/guardian-shield.webp" alt="Dependency watch">
+<br><br>
+
+**Dependency watch**
+
+Installed against latest, per source file, for every tool in your workspace.
+
+</td>
+<td width="50%" valign="top">
+<img src="docs/assets/settings-enterprise.webp" alt="Enterprise settings">
+<br><br>
+
+**Enterprise controls**
+
+A corporate tools registry, enforced tool approval, and the authentication method your
+organisation already uses.
+
+</td>
+</tr>
 </table>
+
+<div align="center">
+
+**[See all of this on the full product page →](https://aicodestation.github.io/aicodestation-app/)**
+
+</div>
 
 <div align="center">
 <br>
