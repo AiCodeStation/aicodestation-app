@@ -1,0 +1,43 @@
+# Maintainer: AiCodeStation LLC <contact@aicodestation.com>
+
+pkgname=aicodestation-bin
+_pkgname=aicodestation
+pkgver=1.0.30
+pkgrel=1
+pkgdesc="Secure AI coding workspace: every developer tool in one governed window, with a pre-execution security gate"
+arch=('x86_64')
+url="https://app.aicodestation.com"
+license=('LicenseRef-Proprietary')
+options=('!strip' '!debug')
+provides=("${_pkgname}")
+conflicts=("${_pkgname}")
+
+# CONFIRM BEFORE PUBLISHING. See packaging/aur/README.md for how to derive this list
+# from the .deb control file. An incomplete depends= is the usual cause of a package
+# that installs cleanly and then fails to launch.
+depends=('glibc' 'gcc-libs')
+
+source=("${_pkgname}-${pkgver}.deb::https://acsdownloads.blob.core.windows.net/releases/${pkgver}/${_pkgname}_${pkgver}_amd64.deb"
+        "${_pkgname}-${pkgver}.deb.asc::https://acsdownloads.blob.core.windows.net/releases/${pkgver}/${_pkgname}_${pkgver}_amd64.deb.asc")
+
+sha256sums=('a05f7ee5dcd06455c2c141d15bd08b92eaac68655fa6fc8e8433d15074f33371'
+            'SKIP')
+
+# Upstream release key. makepkg verifies the detached signature against it, so a
+# tampered download fails the build rather than reaching the user.
+#   E779 76A5 D8A6 1752 8244  D939 E4E6 5E94 12CD 53CA
+validpgpkeys=('E77976A5D8A617528244D939E4E65E9412CD53CA')
+
+package() {
+  # The .deb already lays its files out under the standard hierarchy, so extracting
+  # data.tar into $pkgdir reproduces the upstream layout without guessing at prefixes.
+  bsdtar -xf "${srcdir}/${_pkgname}-${pkgver}.deb" -C "${srcdir}" data.tar.\*
+  bsdtar -xf "${srcdir}"/data.tar.* -C "${pkgdir}"
+
+  # Arch keeps third-party licences here.
+  install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}"
+  cat > "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE" <<'EOF'
+AiCodeStation is proprietary commercial software, not open source.
+Use is governed by the End User Licence Agreement at https://aicodestation.com/terms/
+EOF
+}

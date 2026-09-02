@@ -1,0 +1,13 @@
+# AiCodeStation security contact, per RFC 9116.
+# https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: https://aicodestation.com/contact/
+Policy: https://github.com/AiCodeStation/aicodestation-app/blob/main/SECURITY.md
+Encryption: https://app.aicodestation.com/aicodestation-release-key.asc
+Preferred-Languages: en
+Canonical: https://app.aicodestation.com/.well-known/security.txt
+Expires: 2027-09-02T00:00:00.000Z
+
+# Please report vulnerabilities privately through the contact page above.
+# Do not open a public GitHub issue for a security vulnerability.
+# We welcome responsible disclosure and credit reporters who want the credit.
