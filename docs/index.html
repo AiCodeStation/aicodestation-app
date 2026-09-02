@@ -20,7 +20,8 @@
 <style>
 :root{
   --ink:#05030f;
-  --bg:#0a0620;
+  /* Matches the site background colour used across aicodestation.com */
+  --bg:#070b16;
   --bg-2:#100836;
   --bg-3:#150a3e;
   --violet:#8b5cf6;
@@ -32,7 +33,7 @@
   --dim:#767ca8;
   --line:rgba(150,116,255,.20);
   --line-2:rgba(150,116,255,.34);
-  --card:rgba(30,20,66,.42);
+  --card:rgba(24,20,58,.60);
   --maxw:1240px;
   --brand:linear-gradient(120deg,var(--violet),var(--indigo) 48%,var(--sky));
   color-scheme:dark;
@@ -49,6 +50,16 @@ body{
 img{max-width:100%; height:auto; display:block}
 a{color:inherit}
 .wrap{width:min(var(--maxw),92vw); margin-inline:auto}
+
+/* Site background. One GPU-composited fixed layer rather than
+   background-attachment:fixed, which repaints on every scroll frame.
+   Sits in front of the body colour and behind all content. */
+.site-bg{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:
+    linear-gradient(rgba(7,11,22,.30), rgba(7,11,22,.46)),
+    url("assets/site-bg.webp") center center / cover no-repeat;
+}
 
 /* ---------------------------------------------------------------- nav */
 .nav{
@@ -81,9 +92,9 @@ a{color:inherit}
 .hero::before{
   inset:-30% -20% auto -20%; height:900px;
   background:
-    radial-gradient(46% 52% at 22% 8%,rgba(139,92,246,.42),transparent 70%),
-    radial-gradient(44% 48% at 80% 26%,rgba(56,189,248,.24),transparent 70%),
-    radial-gradient(40% 40% at 50% 0%,rgba(99,102,241,.30),transparent 72%);
+    radial-gradient(46% 52% at 22% 8%,rgba(139,92,246,.26),transparent 70%),
+    radial-gradient(44% 48% at 80% 26%,rgba(56,189,248,.15),transparent 70%),
+    radial-gradient(40% 40% at 50% 0%,rgba(99,102,241,.20),transparent 72%);
 }
 .hero::after{
   inset:0;
@@ -118,7 +129,7 @@ h1 .grad{background:var(--brand); -webkit-background-clip:text; background-clip:
 /* ---------------------------------------------------------------- strip */
 .strip{border-block:1px solid var(--line); background:rgba(255,255,255,.016); margin-top:76px}
 .strip-in{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line)}
-.stat{background:var(--bg); padding:30px 26px; text-align:center}
+.stat{background:rgba(7,11,22,.72); backdrop-filter:blur(3px); padding:30px 26px; text-align:center}
 .stat b{display:block; font-size:1.6rem; font-weight:800; letter-spacing:-.02em;
   background:var(--brand); -webkit-background-clip:text; background-clip:text; color:transparent}
 .stat span{font-size:.86rem; color:var(--dim)}
@@ -158,7 +169,7 @@ h2{
 .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
 .card{
   padding:32px 28px; border-radius:18px; border:1px solid var(--line);
-  background:linear-gradient(160deg,var(--card),rgba(12,8,32,.5));
+  background:linear-gradient(160deg,var(--card),rgba(8,10,26,.68)); backdrop-filter:blur(6px);
   transition:transform .22s, border-color .22s;
 }
 .card:hover{transform:translateY(-4px); border-color:var(--line-2)}
@@ -177,7 +188,7 @@ h2{
 .bento{display:grid; grid-template-columns:repeat(6,1fr); gap:20px}
 .tile{
   grid-column:span 2; border-radius:18px; overflow:hidden;
-  border:1px solid var(--line); background:rgba(12,8,32,.5);
+  border:1px solid var(--line); background:rgba(8,10,26,.66); backdrop-filter:blur(6px);
   transition:transform .22s, border-color .22s;
 }
 .tile:hover{transform:translateY(-4px); border-color:var(--line-2)}
@@ -192,7 +203,7 @@ h2{
 .gate{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; counter-reset:step}
 .step{
   padding:28px 26px; border-radius:16px; border:1px solid var(--line);
-  background:linear-gradient(160deg,var(--card),rgba(12,8,32,.5)); counter-increment:step;
+  background:linear-gradient(160deg,var(--card),rgba(8,10,26,.68)); backdrop-filter:blur(6px); counter-increment:step;
 }
 .step::before{
   content:counter(step,decimal-leading-zero); display:block; margin-bottom:12px;
@@ -203,7 +214,7 @@ h2{
 @media (max-width:940px){ .gate{grid-template-columns:1fr} }
 
 /* ---------------------------------------------------------------- download */
-.dl{overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:rgba(12,8,32,.45)}
+.dl{overflow-x:auto; border:1px solid var(--line); border-radius:16px; background:rgba(8,10,26,.72); backdrop-filter:blur(6px)}
 table{border-collapse:collapse; width:100%; min-width:720px; font-size:.92rem}
 th,td{padding:15px 20px; text-align:left; border-bottom:1px solid var(--line)}
 th{font-size:.75rem; letter-spacing:.13em; text-transform:uppercase; color:var(--dim); font-weight:700}
@@ -220,7 +231,7 @@ td .plat span{display:block; font-weight:400; font-size:.8rem; color:var(--dim)}
 .verify p{margin:0 0 14px; color:var(--muted); font-size:.94rem}
 pre{
   margin:0; padding:16px 18px; border-radius:11px; overflow-x:auto;
-  background:rgba(0,0,0,.45); border:1px solid var(--line);
+  background:rgba(3,5,14,.72); border:1px solid var(--line);
   font-family:ui-monospace,Consolas,"Cascadia Code",monospace; font-size:.83rem; color:#a9e0ff;
 }
 
@@ -228,7 +239,7 @@ pre{
 .plans{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
 .plan{
   padding:32px 28px; border-radius:18px; border:1px solid var(--line);
-  background:linear-gradient(160deg,var(--card),rgba(12,8,32,.5)); text-align:center;
+  background:linear-gradient(160deg,var(--card),rgba(8,10,26,.68)); backdrop-filter:blur(6px); text-align:center;
 }
 .plan.feature{border-color:var(--line-2); box-shadow:0 24px 70px -34px rgba(139,92,246,.7)}
 .plan h3{margin:0 0 8px; font-size:1.22rem; font-weight:750}
@@ -258,6 +269,7 @@ footer{border-top:1px solid var(--line); padding:44px 0; font-size:.88rem; color
 </head>
 <body>
 <script>document.documentElement.className += " js";</script>
+<div class="site-bg" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap nav-in">
