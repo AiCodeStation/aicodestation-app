@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
+
+PackageIdentifier: AiCodeStation.AiCodeStation
+PackageVersion: 1.0.30
+PackageLocale: en-US
+Publisher: AiCodeStation LLC
+PublisherUrl: https://aicodestation.com
+PublisherSupportUrl: https://aicodestation.com/contact/
+PrivacyUrl: https://aicodestation.com/privacy/
+Author: AiCodeStation LLC
+PackageName: AiCodeStation
+PackageUrl: https://app.aicodestation.com/
+License: Proprietary
+LicenseUrl: https://aicodestation.com/terms/
+Copyright: Copyright (c) AiCodeStation LLC. All rights reserved.
+CopyrightUrl: https://aicodestation.com/terms/
+ShortDescription: Secure AI coding workspace with a pre-execution security gate on every run.
+Description: |-
+  AiCodeStation is a desktop AI command station for controlled software-building workflows.
+  It brings every developer tool you own into one workspace, then puts a pre-execution
+  security gate, a scanning engine, and a tamper-evident audit trail in front of all of it.
+
+  The application runs locally. The bundled scanners run on your machine, and you choose
+  which AI provider it talks to.
+
+  Capabilities include a command blacklist, input sanitization, role and corporate gates,
+  zero-trust egress checks, SAST, SCA, SBOM generation, secret detection, IaC and container
+  configuration posture, YARA and IOC matching, license compliance, governed workflows with
+  approval gates, passkey sign-in, an OS-backed secret vault with external secret manager
+  support, and an append-only audit chain with SIEM export.
+Moniker: aicodestation
+Tags:
+  - ai
+  - developer-tools
+  - devsecops
+  - security
+  - sast
+  - sca
+  - sbom
+  - code-review
+  - devops
+  - workflow
+ReleaseNotesUrl: https://aicodestation.com/downloads/
+Documentations:
+  - DocumentLabel: Documentation
+    DocumentUrl: https://aicodestation.com/docs/
+  - DocumentLabel: Trust Center
+    DocumentUrl: https://aicodestation.com/security/
+ManifestType: defaultLocale
+ManifestVersion: 1.6.0

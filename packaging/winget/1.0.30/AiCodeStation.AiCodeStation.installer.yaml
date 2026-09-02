@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.6.0.schema.json
+
+PackageIdentifier: AiCodeStation.AiCodeStation
+PackageVersion: 1.0.30
+MinimumOSVersion: 10.0.19041.0
+InstallerType: nsis          # CONFIRM BEFORE SUBMITTING. See packaging/winget/README.md
+Scope: user
+InstallModes:
+  - interactive
+  - silent
+  - silentWithProgress
+UpgradeBehavior: install
+ReleaseDate: 2026-08-27
+Installers:
+  - Architecture: x64
+    InstallerUrl: https://acsdownloads.blob.core.windows.net/releases/1.0.30/AiCodeStation-Setup-1.0.30.exe
+    InstallerSha256: E795B70AE550D585C6B95EACB4A6BFDB0C87BF7C571DBE076EB20655F0C42E70
+ManifestType: installer
+ManifestVersion: 1.6.0
