@@ -12,7 +12,7 @@
 
 <br>
 
-<a href="https://aicodestation.github.io/aicodestation-app/"><b>Product page</b></a> &nbsp;•&nbsp;
+<a href="https://app.aicodestation.com/"><b>Product page</b></a> &nbsp;•&nbsp;
 <a href="https://aicodestation.com/downloads/"><b>Download</b></a> &nbsp;•&nbsp;
 <a href="https://aicodestation.com/features/"><b>Features</b></a> &nbsp;•&nbsp;
 <a href="https://aicodestation.com/docs/"><b>Docs</b></a> &nbsp;•&nbsp;
@@ -210,7 +210,7 @@ organisation already uses.
 
 <div align="center">
 
-**[See all of this on the full product page →](https://aicodestation.github.io/aicodestation-app/)**
+**[See all of this on the full product page →](https://app.aicodestation.com/)**
 
 </div>
 
